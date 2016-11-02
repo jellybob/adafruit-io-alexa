@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+cd src
+zip alexa-skill.zip *
+aws lambda update-function-code --function-name AdafruitSkill --zip-file fileb://alexa-skill.zip
