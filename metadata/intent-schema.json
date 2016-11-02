@@ -6,7 +6,7 @@
         {
           "name": "FeedValueDescription",
           "type": "FEED_VALUE_DESCRIPTION"
-        }
+        },
         {
           "name": "FeedDescription",
           "type": "FEED_DESCRIPTION"
