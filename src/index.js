@@ -1,9 +1,12 @@
 /* Based on Amazon's Hello World example at https://github.com/amzn/alexa-skills-kit-js/blob/master/samples/helloWorld/src/index.js */
 "use strict";
 
-var APP_ID = "amzn1.ask.skill.c6a21c42-0f35-4dfb-be94-c8a9b7dc84cc";
+var APP_ID = "{{{ APP_ID }}}";
 
-var AlexaSkill = require("./AlexaSkill");
+var AlexaSkill = require("./AlexaSkill"),
+    AdafruitClient = require("./AdafruitClient");
+
+var adafruit = new AdafruitClient("{{{ ADAFRUIT_KEY }}}");
 
 class AdafruitIOSkill extends AlexaSkill {
   constructor() {
@@ -40,7 +43,10 @@ AdafruitIOSkill.prototype.intentHandlers = {
       feedDescription = feedDescriptionSlot.value;
     }
 
-    response.tellWithCard(`You asked for ${feedDescription}`, "Hello World", "Hello World!");
+    adafruit.requestLatestValue("arthurs-room", (data) => {
+      console.log("Got a response:" + JSON.stringify(data));
+      response.tellWithCard(`The temperature in ${feedDescription} is ${data.value}`, "Hello World", "Hello World!");
+    });
   }
 };
 
