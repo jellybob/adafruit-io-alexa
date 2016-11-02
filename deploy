@@ -1,4 +1,13 @@
 #!/usr/bin/env bash
-cd src
+echo $APP_ID
+echo $ADAFRUIT_KEY
+
+rm -rf src-for-deploy
+cp -r src src-for-deploy
+cd src-for-deploy
+
+sed -i "s/{{{ APP_ID }}}/$APP_ID/g" index.js
+sed -i "s/{{{ ADAFRUIT_KEY }}}/$ADAFRUIT_KEY/g" index.js
+
 zip alexa-skill.zip *
 aws lambda update-function-code --function-name AdafruitSkill --zip-file fileb://alexa-skill.zip
