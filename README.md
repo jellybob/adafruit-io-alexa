@@ -15,3 +15,8 @@ Alexa, ask Adafruit
 * to set coffees drunk to 12 (sets the specified data point)
 * to turn on the living room light (sends a 1 to the named feed)
 * to turn off the living room light (sends a 0 to the named feed)
+
+## Configuration
+
+Data which Amazon want on their configuration form is found in `metadata/` (I'm hoping there'll be
+an API for that at some point).

@@ -1,0 +1,8 @@
+QueryLatestValue for {FeedDescription}
+QueryLatestValue for the latest {FeedDescription}
+QueryLatestValue what the {FeedValueDescription} is from {FeedDescription}
+QueryLatestValue what the {FeedValueDescription} is on {FeedDescription}
+QueryLatestValue what the {FeedValueDescription} is in {FeedDescription}
+QueryLatestValue for the {FeedValueDescription} from {FeedDescription}
+QueryLatestValue for the {FeedValueDescription} on {FeedDescription}
+QueryLatestValue for the {FeedValueDescription} in {FeedDescription}
