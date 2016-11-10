@@ -31,5 +31,9 @@ the skill up to Lambda.
 
 ## Configuration UI
 
-This is really bare bones, its just a thin veneer over DynamoDB
-which allows storing the user's API token for later use.
+The configuration UI runs on Heroku, and is a thin layer which allows an Alexa
+user ID to be mapped to an Adafruit.io API key. Deploy it by running the `deploy`
+script in `config-ui`.
+
+Its written in [Sinatra](http://www.sinatrarb.com/), because I already know how
+to do that easily.

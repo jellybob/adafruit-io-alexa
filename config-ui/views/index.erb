@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Alexa/Adafruit Linker</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Link your Adafruit.io account</h1>
+      <p>To connect Alexa to your Adafruit.io account you'll need to provide an API
+         key. Sadly Adafruit don't yet provide a way to do this automatically, so
+         you'll have to go get it and paste it in the field below.</p>
+      <p>To get your key:</p>
+      <ol>
+        <li>Visit <a href="https://io.adafruit.com/">io.adafruit.com</a> and log in.</li>
+        <li>Click the yellow key icon in the top right (it'll say "Your secret AIO Key" when you hover over it).</li>
+        <li>Copy the contents of the field next to "YOUR AIO KEY".</li>
+      </ol>
+
+      <form method="post" action="/">
+        <div class="form-group">
+          <label for="adafruit_key">Your Adafruit.io key</label>
+          <input type="text" class="form-control" name="adafruit_key" required>
+        </div>
+        <input type="hidden" name="alexa_id" value="<%= alexa_id %>">
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>
