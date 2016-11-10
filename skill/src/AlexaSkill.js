@@ -141,7 +141,7 @@ Response.prototype = (function () {
         }
         if (options.cardTitle && options.cardContent) {
             alexaResponse.card = {
-                type: "Simple",
+                type: options.cardType || "Simple",
                 title: options.cardTitle,
                 content: options.cardContent
             };
@@ -190,6 +190,16 @@ Response.prototype = (function () {
                 cardContent: cardContent,
                 shouldEndSession: false
             }));
+        },
+        linkAccount: function(speechOutput, cardTitle, cardContent) {
+          this._context.succeed(buildSpeechletResponse({
+            session: this._session,
+            output: speechOutput,
+            cardTitle: cardTitle,
+            cardContent: cardContent,
+            cardType: "LinkAccount",
+            shouldEndSession: true
+          }))
         }
     };
 })();

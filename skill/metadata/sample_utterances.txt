@@ -1,12 +1,23 @@
-QueryLatestValue for {FeedDescription}
-QueryLatestValue for {FeedDescription} {FeedValueDescription}
-QueryLatestValue for the latest {FeedDescription}
+QueryLatestValue {FeedDescription}
+QueryLatestValue {FeedDescription} {FeedValueDescription}
+QueryLatestValue the latest {FeedDescription}
 QueryLatestValue what the {FeedValueDescription} is from {FeedDescription}
 QueryLatestValue what the {FeedValueDescription} is on {FeedDescription}
 QueryLatestValue what the {FeedValueDescription} is in {FeedDescription}
-QueryLatestValue for the {FeedValueDescription} from {FeedDescription}
-QueryLatestValue for the {FeedValueDescription} on {FeedDescription}
-QueryLatestValue for the {FeedValueDescription} in {FeedDescription}
-QueryLatestValue for the {FeedValueDescription} from {FeedDescription} is
-QueryLatestValue for the {FeedValueDescription} on {FeedDescription} is
-QueryLatestValue for the {FeedValueDescription} in {FeedDescription} is
+QueryLatestValue the {FeedValueDescription} from {FeedDescription}
+QueryLatestValue the {FeedValueDescription} on {FeedDescription}
+QueryLatestValue the {FeedValueDescription} in {FeedDescription}
+QueryLatestValue the {FeedValueDescription} from {FeedDescription} is
+QueryLatestValue the {FeedValueDescription} on {FeedDescription} is
+QueryLatestValue the {FeedValueDescription} in {FeedDescription} is
+QueryLatestValue {FeedValueDescription} from {FeedDescription}
+QueryLatestValue {FeedValueDescription} on {FeedDescription}
+QueryLatestValue {FeedValueDescription} in {FeedDescription}
+QueryLatestValue {FeedValueDescription} from {FeedDescription} is
+QueryLatestValue {FeedValueDescription} on {FeedDescription} is
+QueryLatestValue {FeedValueDescription} in {FeedDescription} is
+LinkAccount to link my account
+LinkAccount to configure
+LinkAccount to setup
+LinkAccount to log in
+LinkAccount to connect

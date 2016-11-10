@@ -6,13 +6,10 @@ var APP_ID = "{{{ APP_ID }}}";
 var AlexaSkill = require("./AlexaSkill"),
     AdafruitClient = require("./AdafruitClient");
 
-var adafruit = new AdafruitClient("{{{ ADAFRUIT_KEY }}}");
-
 class AdafruitIOSkill extends AlexaSkill {
   constructor() {
     super(APP_ID);
   }
-
 }
 
 AdafruitIOSkill.prototype.eventHandlers.onSessionStarted =  (sessionStartedRequest, session) => {
@@ -35,6 +32,16 @@ AdafruitIOSkill.prototype.eventHandlers.onSessionEnded = (sessionEndedRequest, s
 AdafruitIOSkill.prototype.intentHandlers = {
   // register custom intent handlers
   "QueryLatestValue": (intent, session, response) => {
+    if (!session.user.accessToken) {
+      response.linkAccount(
+        "You need to link your Adafruit account before I can access your data feeds. See the Alexa app to continue.",
+        "Link your Adafruit account",
+        "To access your Adafruit.io feeds you need to link your account."
+      )
+
+      return;
+    }
+
     var feedDescriptionSlot = intent.slots.FeedDescription;
     var feedDescription = "an unknown thing.";
     console.log(`Feed description slot ${JSON.stringify(feedDescriptionSlot)}`)
@@ -43,11 +50,20 @@ AdafruitIOSkill.prototype.intentHandlers = {
       feedDescription = feedDescriptionSlot.value;
     }
 
+    var adafruit = new AdafruitClient(session.user.accessToken);
     adafruit.requestLatestValue("arthurs-room", (data) => {
       console.log("Got a response:" + JSON.stringify(data));
-      response.tellWithCard(`The temperature in ${feedDescription} is ${data.value}`, "Hello World", "Hello World!");
+      response.tellWithCard(`The temperature in ${feedDescription} is ${data.value}`, feedDescription, `The temperature in ${feedDescription} is ${data.value}`);
     });
-  }
+  },
+
+  "LinkAccount": (intent, session, response) => {
+    response.linkAccount(
+      "See the Alexa app to link your account.",
+      "Link your Adafruit account",
+      "To access your Adafruit.io feeds you need to link your account."
+    );
+  },
 };
 
 // Create the handler that responds to the Alexa Request.
@@ -56,4 +72,3 @@ exports.handler = (event, context) => {
   var adafruit = new AdafruitIOSkill();
   adafruit.execute(event, context);
 };
-

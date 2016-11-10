@@ -12,6 +12,10 @@
           "type": "FEED_DESCRIPTION"
         }
       ]
+    },
+    {
+      "intent": "LinkAccount",
+      "slots": []
     }
   ]
 }
