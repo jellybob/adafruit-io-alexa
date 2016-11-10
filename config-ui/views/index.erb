@@ -12,6 +12,10 @@
   </head>
   <body>
     <div class="container">
+      <p>Params:</p>
+      <% params.each do |key, value| %>
+        <p><strong><%= key %></strong> <%= value %></p>
+      <% end %>
       <h1>Link your Adafruit.io account</h1>
       <p>To connect Alexa to your Adafruit.io account you'll need to provide an API
          key. Sadly Adafruit don't yet provide a way to do this automatically, so
@@ -28,7 +32,9 @@
           <label for="adafruit_key">Your Adafruit.io key</label>
           <input type="text" class="form-control" name="adafruit_key" required>
         </div>
-        <input type="hidden" name="alexa_id" value="<%= alexa_id %>">
+        <% params.each do |key, value| %>
+          <input type="hidden" name="<%= key %>" value="<%= value %>">
+        <% end %>
         <button type="submit" class="btn btn-default">Submit</button>
       </form>
     </div>
