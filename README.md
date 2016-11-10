@@ -36,4 +36,6 @@ user ID to be mapped to an Adafruit.io API key. Deploy it by running the `deploy
 script in `config-ui`.
 
 Its written in [Sinatra](http://www.sinatrarb.com/), because I already know how
-to do that easily.
+to do that easily, but having actually done it now the linking process is so
+simple I could probably boil it down to a static HTML file and some Javascript
+on S3. Maybe do that some time.
